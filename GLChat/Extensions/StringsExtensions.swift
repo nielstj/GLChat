@@ -51,7 +51,19 @@ extension String {
         let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [.font: font], context: nil)
         return ceil(boundingBox.width)
     }
-    
-    
-    
 }
+
+extension NSAttributedString {
+    public func height(withConstrainedWidth width: CGFloat) -> CGFloat {
+        let constraintrect = CGSize(width: width, height: .greatestFiniteMagnitude)
+        let boundingBox = self.boundingRect(with: constraintrect, options: .usesFontLeading, context: nil)
+    return boundingBox.size.height
+    }
+    
+    public func width(withConstrainedHeight height: CGFloat) -> CGFloat {
+        let constraintrect = CGSize(width: .greatestFiniteMagnitude, height: height)
+        let boundingBox = self.boundingRect(with: constraintrect, options: .usesFontLeading, context: nil)
+        return boundingBox.size.width
+    }
+}
+

@@ -23,8 +23,10 @@ public struct ChatMediaLayout: Layout {
         media.frame = CGRect(x:0, y:0, width: rect.width, height: image.size.height )
         message.frame = CGRect(x: 0, y: image.size.height, width: rect.width, height: message.bounds.height + 2.0)
     }
-    
     public var contents: [Content] {
         return [message, media]
     }
 }
+
+
+
