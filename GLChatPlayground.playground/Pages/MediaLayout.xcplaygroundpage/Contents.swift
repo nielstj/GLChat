@@ -11,8 +11,8 @@ let w: CGFloat = 250
 let image = img.scaled(to: w)
 
 
-let label = BubbleLabel(message: text, width: w, font: UIFont.systemFont(ofSize: 10))
-label.backgroundColor = UIColor.blue
+let label = BubbleLabel(message: text, width: w, font: UIFont.systemFont(ofSize: 12))
+label.backgroundColor = UIColor.purple
 label.textColor = UIColor.white
 
 let imageView = UIImageView(image: image)
@@ -31,9 +31,24 @@ for view in mediaLayout.contents {
     masterView.addSubview(view)
 }
 
+
+
+
+
 mediaLayout.layout(in: masterView.bounds)
 masterView.layer.cornerRadius = 12.0
 masterView.layer.masksToBounds = true
-PlaygroundPage.current.liveView = masterView
+
+var dateLayout = masterView.withDate(Date())
+let fullView = UIView(frame: CGRect(x: 0, y: 0, width: masterView.bounds.width, height: masterView.bounds.height + 20.0))
+for view in dateLayout.contents {
+    fullView.addSubview(view)
+}
+dateLayout.layout(in: fullView.bounds)
+
+
+
+
+PlaygroundPage.current.liveView = fullView
 
 //: [Next](@next)

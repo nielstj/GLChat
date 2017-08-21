@@ -24,15 +24,15 @@ struct BaseStyles {
 }
 
 let rect = CGRect(x: 0, y: 0, width: 100, height: 100)
-let view = UILabel(frame: rect)
-view.text = "Lorem Ipsum dorem"
+let label = BubbleLabel(frame: rect)
+label.text = "Lorem Ipsum dorem"
 
-view.apply(styles: [BaseStyles.roundCornerStyle,
-                    BaseStyles.blueBackground,
+label.apply(styles: [BaseStyles.blueBackground,
+    BaseStyles.roundCornerStyle,
                     BaseStyles.multipleLineLabel,
                     BaseStyles.whiteTextLabel])
 
-PlaygroundPage.current.liveView = view
+PlaygroundPage.current.liveView = label
 
 
 

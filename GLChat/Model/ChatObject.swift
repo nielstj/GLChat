@@ -23,7 +23,6 @@ public protocol ChatObjectType {
     var message: String { get }
     var images: [UIImage]? { get }
     var timestamp: Date { get }
-    var styleProvider : TextStyleProviderType { get }
 }
 
 public struct ChatObject: ChatObjectType {
@@ -33,22 +32,19 @@ public struct ChatObject: ChatObjectType {
     public var message: String
     public var images : [UIImage]?
     public var timestamp: Date
-    public var styleProvider: TextStyleProviderType
     
     public init(id: String,
                 type: ChatObjectCellType,
                 sender: AvatarType,
                 message: String,
                 images: [UIImage]?,
-                timestamp: Date,
-                styleProvider: TextStyleProviderType) {
+                timestamp: Date) {
         self.id = id
         self.type = type
         self.sender = sender
         self.message = message
         self.images = images
         self.timestamp = timestamp
-        self.styleProvider = styleProvider
     }
 }
 

@@ -6,7 +6,7 @@ import PlaygroundSupport
 
 
 struct DefaultTextStyle: TextStyleProviderType {
-    var font = UIFont.systemFont(ofSize: 10)
+    var font = UIFont(name: "Helvetica-Light", size: 12.0)!
     var color = UIColor.white
     var backgroundColor = UIColor.purple
     var cornerRadius: CGFloat = 12.0
@@ -22,13 +22,27 @@ struct ChatBubbleStyles {
         label.layer.cornerRadius = s.cornerRadius
         label.layer.masksToBounds = true
     }
+    
 }
 
-let m: String = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas convallis scelerisque purus et fringilla. Sed eget ante magna. Praesent id convallis libero, a eleifend turpis. Integer blandit metus sit amet velit varius congue. Cras sit amet laoreet velit, ut vulputate dolor. Donec odio dolor, ultricies vulputate sem eget, tristique gravida massa."
+let m: String = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas convallis scelerisque purus et fringilla. Sed eget ante magna. Praesent id convallis libero, a eleifend turpis. Integer blandit metus sit amet velit varius congue. Cras sit amet laoreet velit, ut vulputate dolor. Donec odio dolor, ultricies vulputate sem eget, tristique gravida massa"
 let f: UIFont = defaultStyle.font
-let w: CGFloat = 300.0
+let w: CGFloat = 250.0
 
-var lbl = BubbleLabel(message: m, width: w, font: f)
-lbl.apply(style: ChatBubbleStyles.incomingChatStyle)
-PlaygroundPage.current.liveView = lbl
+var lbl = BubbleLabel(message: m, width: w, font: f, padding: 8.0)
+
+var timestampLayout = lbl.withDate(Date())
+let x = UIView(frame: CGRect(x: 0, y: 0, width: w, height: lbl.bounds.height + 20.0))
+for view in timestampLayout.contents {
+    
+    if let label = view as? BubbleLabel {
+        label.apply(style: ChatBubbleStyles.incomingChatStyle)
+    }
+    x.addSubview(view)
+}
+timestampLayout.layout(in: x.bounds)
+
+
+
+PlaygroundPage.current.liveView = x
 //: [Next](@next)

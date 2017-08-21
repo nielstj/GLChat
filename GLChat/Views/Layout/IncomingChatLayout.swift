@@ -16,10 +16,10 @@ public struct IncomingChatLayout<AvatarContent: Layout, messageContent: Layout, 
     var message: BubbleLabel
     var timestamp: UILabel
     
-    public init(model: ChatObject) {
-        avatar = AvatarView()
-        message = BubbleLabel()
-        timestamp = UILabel()
+    public init(avatar: AvatarView, message: BubbleLabel, timestamp: UILabel) {
+        self.avatar = avatar
+        self.message = message
+        self.timestamp = timestamp
     }
     
     mutating public func layout(in rect: CGRect) {
@@ -31,27 +31,15 @@ public struct IncomingChatLayout<AvatarContent: Layout, messageContent: Layout, 
         timestamp.layout(in: timestampRect)
     }
     
-    
-    @discardableResult
-    mutating public func layout(in rect: CGRect) -> CGRect {
-        let avatarRect = self.avatarRect(in: rect)
-        let messageRect = self.messageRect(in: rect)
-        let timestampRect = self.timestampRect(in: rect)
-        avatar.layout(in: avatarRect)
-        message.layout(in: messageRect)
-        timestamp.layout(in: timestampRect)
-        return .zero
-    }
-    
     private func avatarRect(in rect: CGRect) -> CGRect {
-        return .zero
+        return CGRect(x: 0, y: 0, width: 50, height: 50)
     }
     
     private func messageRect(in rect: CGRect) -> CGRect {
-        return .zero
+        return CGRect(x: 50, y: 0, width: rect.width * 0.6, height:rect.height)
     }
     private func timestampRect(in rect: CGRect) -> CGRect {
-        return .zero
+        return CGRect(x: 50, y: rect.height - 20, width: rect.width * 0.5, height: 20)
     }
     
     public var contents: [Content] {

@@ -3,8 +3,8 @@
     <pages>
         <page name='Avatar'/>
         <page name='Bubble'/>
-        <page name='ChatObject'/>
         <page name='MediaLayout'/>
         <page name='Styleable'/>
+        <page name='ChatObject'/>
     </pages>
 </playground>

@@ -27,6 +27,7 @@
 		DC4F1A5F1F498BFD00BD29A5 /* ChatMediaLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4F1A5E1F498BFD00BD29A5 /* ChatMediaLayout.swift */; };
 		DC4F1A611F4A7C9900BD29A5 /* Styleable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4F1A601F4A7C9900BD29A5 /* Styleable.swift */; };
 		DC78E6891F46C70E0011797A /* BubbleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC78E6881F46C70E0011797A /* BubbleLabel.swift */; };
+		DCCB8BF31F4B32D600CB7A1B /* TimestampLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCB8BF21F4B32D600CB7A1B /* TimestampLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		DC4F1A5E1F498BFD00BD29A5 /* ChatMediaLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMediaLayout.swift; sourceTree = "<group>"; };
 		DC4F1A601F4A7C9900BD29A5 /* Styleable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styleable.swift; sourceTree = "<group>"; };
 		DC78E6881F46C70E0011797A /* BubbleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleLabel.swift; sourceTree = "<group>"; };
+		DCCB8BF21F4B32D600CB7A1B /* TimestampLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimestampLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 				DC23C0AC1F453C7D00995044 /* InsetsLayout.swift */,
 				DC4F1A5C1F49880F00BD29A5 /* IncomingChatLayout.swift */,
 				DC4F1A5E1F498BFD00BD29A5 /* ChatMediaLayout.swift */,
+				DCCB8BF21F4B32D600CB7A1B /* TimestampLayout.swift */,
 			);
 			path = Layout;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 			files = (
 				DC23C0C01F45474500995044 /* UIView+Layout.swift in Sources */,
 				DC23C0B91F453DF300995044 /* ChatAvatar.swift in Sources */,
+				DCCB8BF31F4B32D600CB7A1B /* TimestampLayout.swift in Sources */,
 				DC4F1A611F4A7C9900BD29A5 /* Styleable.swift in Sources */,
 				DC2F61AE1F467F30008731D8 /* Drawable.swift in Sources */,
 				DC2F61A91F467E3C008731D8 /* UIImageExtensions.swift in Sources */,

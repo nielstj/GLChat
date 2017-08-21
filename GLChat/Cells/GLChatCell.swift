@@ -9,40 +9,52 @@
 import Foundation
 
 
-public class GLIncomingChatCell: UITableViewCell {
-    static let reuseId = "\(GLIncomingChatCell.self)"
+public class GLIncomingChatCell<T: Layout>: UITableViewCell {
     
+    private var content: T
+    private var avatar: AvatarView
+    private var timestamp: UILabel
     
-    private var content = BubbleLabel()
-    private var decoration = AvatarView(model: Avatar(name: "DICKY",
-                                                      image: #imageLiteral(resourceName: "img.jpg"),
-                                                      color: UIColor.purple))
-    
-    override public init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    init(style: UITableViewCellStyle, reuseIdentifier: String, content: T, avatar: AvatarView, timestamp: UILabel) {
+        self.content = content
+        self.avatar = avatar
+        self.timestamp = timestamp
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        // TODO: INIT LAYOUT AND ADD TO SUBVIEW
-        content.numberOfLines = 0
-        content.backgroundColor = UIColor.purple
-        content.textColor = UIColor.white
-        content.layer.cornerRadius = 12.0
-        content.layer.masksToBounds = true
-        content.font = UIFont.systemFont(ofSize: 12)
-        content.text = "The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men."
-        let layout = DecoratingLayout(content: content, decoration: decoration)
-        for view in layout.contents {
-            contentView.addSubview(view)
-        }
+        // TODO: Setup Layout here and add contents to contentview
+        
     }
     
     public required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+        fatalError()
     }
     
     
     public override func layoutSubviews() {
         super.layoutSubviews()
-        var layout = DecoratingLayout(content: content, decoration: decoration)
-        layout.layout(in: contentView.bounds)
+        // SETUP layout here and Lay out all contents
     }
 }
+
+public class GLOutgoingChatCell<T: Layout>: UITableViewCell {
+    private var content: T
+    private var timestamp: UILabel
+    
+    init(style: UITableViewCellStyle, reuseIdentifier: String, content: T, timestamp: UILabel) {
+        self.content = content
+        self.timestamp = timestamp
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        // TODO: Setup layout here and add contents to contentview
+    }
+    
+    public required init?(coder aDecoder: NSCoder) {
+        fatalError()
+    }
+    
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        // TODO: setup layout here and layout all contents with contentview.bounds
+    }
+    
+}
+
 
