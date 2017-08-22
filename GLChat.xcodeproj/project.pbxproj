@@ -23,11 +23,12 @@
 		DC2F61A91F467E3C008731D8 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2F61A81F467E3C008731D8 /* UIImageExtensions.swift */; };
 		DC2F61AC1F467F0A008731D8 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2F61AB1F467F0A008731D8 /* AvatarView.swift */; };
 		DC2F61AE1F467F30008731D8 /* Drawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2F61AD1F467F30008731D8 /* Drawable.swift */; };
-		DC4F1A5D1F49880F00BD29A5 /* IncomingChatLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4F1A5C1F49880F00BD29A5 /* IncomingChatLayout.swift */; };
 		DC4F1A5F1F498BFD00BD29A5 /* ChatMediaLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4F1A5E1F498BFD00BD29A5 /* ChatMediaLayout.swift */; };
 		DC4F1A611F4A7C9900BD29A5 /* Styleable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4F1A601F4A7C9900BD29A5 /* Styleable.swift */; };
 		DC78E6891F46C70E0011797A /* BubbleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC78E6881F46C70E0011797A /* BubbleLabel.swift */; };
+		DCC9E4431F4BD3B100445CE1 /* IncomingChatLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC9E4421F4BD3B100445CE1 /* IncomingChatLayout.swift */; };
 		DCCB8BF31F4B32D600CB7A1B /* TimestampLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCB8BF21F4B32D600CB7A1B /* TimestampLayout.swift */; };
+		DCCB8BF51F4BBEAE00CB7A1B /* DatesExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCB8BF41F4BBEAE00CB7A1B /* DatesExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,11 +62,12 @@
 		DC2F61A81F467E3C008731D8 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		DC2F61AB1F467F0A008731D8 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		DC2F61AD1F467F30008731D8 /* Drawable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawable.swift; sourceTree = "<group>"; };
-		DC4F1A5C1F49880F00BD29A5 /* IncomingChatLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomingChatLayout.swift; sourceTree = "<group>"; };
 		DC4F1A5E1F498BFD00BD29A5 /* ChatMediaLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMediaLayout.swift; sourceTree = "<group>"; };
 		DC4F1A601F4A7C9900BD29A5 /* Styleable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styleable.swift; sourceTree = "<group>"; };
 		DC78E6881F46C70E0011797A /* BubbleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleLabel.swift; sourceTree = "<group>"; };
+		DCC9E4421F4BD3B100445CE1 /* IncomingChatLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomingChatLayout.swift; sourceTree = "<group>"; };
 		DCCB8BF21F4B32D600CB7A1B /* TimestampLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimestampLayout.swift; sourceTree = "<group>"; };
+		DCCB8BF41F4BBEAE00CB7A1B /* DatesExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatesExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,9 +149,9 @@
 				DC23C0AA1F453C7D00995044 /* BackgroundLayout.swift */,
 				DC23C0AB1F453C7D00995044 /* DecoratingLayout.swift */,
 				DC23C0AC1F453C7D00995044 /* InsetsLayout.swift */,
-				DC4F1A5C1F49880F00BD29A5 /* IncomingChatLayout.swift */,
 				DC4F1A5E1F498BFD00BD29A5 /* ChatMediaLayout.swift */,
 				DCCB8BF21F4B32D600CB7A1B /* TimestampLayout.swift */,
+				DCC9E4421F4BD3B100445CE1 /* IncomingChatLayout.swift */,
 			);
 			path = Layout;
 			sourceTree = "<group>";
@@ -177,6 +179,7 @@
 				DC23C0B31F453C7D00995044 /* StringsExtensions.swift */,
 				DC2F61A61F467E03008731D8 /* CGRectExtensions.swift */,
 				DC2F61A81F467E3C008731D8 /* UIImageExtensions.swift */,
+				DCCB8BF41F4BBEAE00CB7A1B /* DatesExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -318,15 +321,16 @@
 				DC23C0C01F45474500995044 /* UIView+Layout.swift in Sources */,
 				DC23C0B91F453DF300995044 /* ChatAvatar.swift in Sources */,
 				DCCB8BF31F4B32D600CB7A1B /* TimestampLayout.swift in Sources */,
+				DCC9E4431F4BD3B100445CE1 /* IncomingChatLayout.swift in Sources */,
 				DC4F1A611F4A7C9900BD29A5 /* Styleable.swift in Sources */,
 				DC2F61AE1F467F30008731D8 /* Drawable.swift in Sources */,
 				DC2F61A91F467E3C008731D8 /* UIImageExtensions.swift in Sources */,
-				DC4F1A5D1F49880F00BD29A5 /* IncomingChatLayout.swift in Sources */,
 				DC2F61AC1F467F0A008731D8 /* AvatarView.swift in Sources */,
 				DC23C0BC1F453DF900995044 /* BackgroundLayout.swift in Sources */,
 				DC78E6891F46C70E0011797A /* BubbleLabel.swift in Sources */,
 				DC23C0BB1F453DF900995044 /* Layout.swift in Sources */,
 				DC2F61A71F467E03008731D8 /* CGRectExtensions.swift in Sources */,
+				DCCB8BF51F4BBEAE00CB7A1B /* DatesExtensions.swift in Sources */,
 				DC23C0B81F453DEE00995044 /* StringsExtensions.swift in Sources */,
 				DC4F1A5F1F498BFD00BD29A5 /* ChatMediaLayout.swift in Sources */,
 				DC23C0CF1F45851B00995044 /* GLChatCell.swift in Sources */,
