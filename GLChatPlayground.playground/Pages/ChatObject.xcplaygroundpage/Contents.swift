@@ -8,7 +8,7 @@ import PlaygroundSupport
 
 
 
-let msg1 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas convallis scelerisque purus et fringilla. Sed eget ante magna. Praesent id convallis libero, a eleifend turpis."
+let msg1 = "Lorem............."
 let msg2 = "Integer blandit metus sit amet velit varius congue. Cras sit amet laoreet velit, ut vulputate dolor. Donec odio dolor, ultricies vulputate sem eget, tristique gravida massa. Etiam purus ante, imperdiet nec molestie non, consectetur id eros. Integer pretium magna ac sem imperdiet, ut ornare velit euismod. Cras nulla ipsum, dignissim ut leo non, volutpat rhoncus dolor. Nullam ultrices lectus non magna malesuada imperdiet at dictum turpis."
 let msg3 = "Donec purus nisl, dictum at ultricies congue."
 
@@ -17,13 +17,13 @@ let gemma = Avatar(name: "Gemma Arterton",
                     color: UIColor.blue)
 let daniel = Avatar(name: "Daniel Tjuatja",
                     image: nil,
-                    color: UIColor.red)
+                    color: UIColor.blue)
 
 let obj1 = ChatObject(id: "01",
-                      type: .incoming,
-                      sender: daniel,
-                      message: msg1,
-                      images: [#imageLiteral(resourceName: "gemma.jpg")],
+                      type: .outgoing,
+                      sender: gemma,
+                      message: msg3,
+                      images: [#imageLiteral(resourceName: "gemma2.jpg")],
                       timestamp: Date())
 let obj2 = ChatObject(id: "02",
                       type: .incoming,
@@ -43,12 +43,12 @@ let objects: [ChatObject] = [obj1, obj2, obj3]
 
 let f = UIFont.systemFont(ofSize: 12)
 let c = UIColor.purple
-let w: CGFloat = 480
+let w: CGFloat = 320
 
 
 let view = obj1.generateView(width: w)
 let avatar = obj1.generateAvatar()
-let cell = obj1.generateViewWithAvatar(width: w)
+let cell = obj1.generateCell(width: w)
 
 PlaygroundPage.current.liveView = cell
 

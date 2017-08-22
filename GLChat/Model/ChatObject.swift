@@ -47,12 +47,28 @@ public struct ChatObject: ChatObjectType {
         self.timestamp = timestamp
     }
     
-    public func generateAvatar() -> AvatarView {
-        return AvatarView(model: sender)
+    
+    public func generateCell(width: CGFloat) -> UIView {
+        
+        switch type {
+        case .incoming: return generateIncomingView(width: width)
+        case .outgoing: return generateOutgoingView(width: width)
+        case .options: return UIView()
+        case .information: return UIView()
+        }
     }
     
     
-    public func generateViewWithAvatar(width: CGFloat) -> UIView {
+    private func generateOutgoingView(width: CGFloat) -> UIView {
+        let ratio: CGFloat = 0.6
+        let content = generateView(width: width * ratio)
+        content.frame = content.frame.offsetBy(dx: width * (1.0 - ratio) - 12.0, dy: 0)
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: width, height: content.bounds.height))
+        view.addSubview(content)
+        return view
+    }
+    
+    private func generateIncomingView(width: CGFloat) -> UIView {
         let view = UIView()
         let content = generateView(width: width * 0.6)
         let avatar = generateAvatar()
@@ -77,7 +93,8 @@ public struct ChatObject: ChatObjectType {
         content.layer.cornerRadius = 12.0
         content.layer.masksToBounds = true
         
-        var tsLayout = content.withDate(timestamp)
+        let alignment: NSTextAlignment = type == .outgoing ? .right : .left
+        var tsLayout = content.withDate(timestamp, alignment: alignment)
         let rect = CGRect(x: 0, y: 0, width: width, height: content.bounds.height + 20)
         view.frame = rect
         tsLayout.layout(in: view.bounds)
@@ -105,6 +122,9 @@ public struct ChatObject: ChatObjectType {
         for v in layout.contents { view.addSubview(v)}
         layout.layout(in: view.bounds)
         return view
+    }
+    public func generateAvatar() -> AvatarView {
+        return AvatarView(model: sender)
     }
 }
 

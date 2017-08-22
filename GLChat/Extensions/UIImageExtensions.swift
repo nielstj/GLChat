@@ -49,8 +49,8 @@ public extension UIImage {
         /* Build the rectangle representing the area to be drawn */
         var scaledImageRect = CGRect.zero
         
-        scaledImageRect.size.width  = size.width * aspectRatio
-        scaledImageRect.size.height = size.height * aspectRatio
+        scaledImageRect.size.width  = ceil(size.width * aspectRatio)
+        scaledImageRect.size.height = ceil(size.height * aspectRatio)
         scaledImageRect.origin.x    = (newSize.width - size.width * aspectRatio) / 2.0
         scaledImageRect.origin.y    = (newSize.height - size.height * aspectRatio) / 2.0
         
@@ -68,8 +68,8 @@ public extension UIImage {
     func scaled(to width: CGFloat) -> UIImage {
         let oldWidth = self.size.width
         let aspectRatio = width / oldWidth
-        let newHeight = self.size.height * aspectRatio
-        let newWidth = self.size.width * aspectRatio
+        let newHeight = ceil(self.size.height * aspectRatio)
+        let newWidth = ceil(self.size.width * aspectRatio)
         
         UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
         self.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
@@ -77,24 +77,4 @@ public extension UIImage {
         UIGraphicsEndImageContext()
         return newImage!
     }
-    
-    
-    
-
-    
-//    func imageWithImage (sourceImage:UIImage, scaledToWidth: CGFloat) -> UIImage {
-//        let oldWidth = sourceImage.size.width
-//        let scaleFactor = scaledToWidth / oldWidth
-//
-//        let newHeight = sourceImage.size.height * scaleFactor
-//        let newWidth = oldWidth * scaleFactor
-//
-//        UIGraphicsBeginImageContext(CGSize(width:newWidth, height:newHeight))
-//        sourceImage.draw(in: CGRect(x:0, y:0, width:newWidth, height:newHeight))
-//        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-//        UIGraphicsEndImageContext()
-//        return newImage!
-//    }
-    
-    
 }
