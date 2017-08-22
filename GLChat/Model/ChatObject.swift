@@ -47,6 +47,19 @@ public struct ChatObject: ChatObjectType {
         self.timestamp = timestamp
     }
     
+    public func getActualHeightWith(width: CGFloat) -> CGFloat {
+        let ratio: CGFloat = 0.6
+        let w = width * ratio
+        var height: CGFloat = 0.0
+        
+        height += message.height(withConstrainedWidth: (w - 16.0), font: UIFont.systemFont(ofSize: 15.0)) + 36.0
+        if let image = images?.first {
+            let ratio = w / image.size.width
+            height += ceil(ratio * image.size.height)
+        }
+        return height
+    }
+    
     
     public func generateCell(width: CGFloat) -> UIView {
         
@@ -62,7 +75,7 @@ public struct ChatObject: ChatObjectType {
     private func generateOutgoingView(width: CGFloat) -> UIView {
         let ratio: CGFloat = 0.6
         let content = generateView(width: width * ratio)
-        content.frame = content.frame.offsetBy(dx: width * (1.0 - ratio) - 12.0, dy: 0)
+        content.frame = content.frame.offsetBy(dx: width * (1.0 - ratio) - 15.0, dy: 0)
         let view = UIView(frame: CGRect(x: 0, y: 0, width: width, height: content.bounds.height))
         view.addSubview(content)
         return view
@@ -90,7 +103,7 @@ public struct ChatObject: ChatObjectType {
                                         text: message) }
         
         content.backgroundColor = UIColor.blue
-        content.layer.cornerRadius = 12.0
+        content.layer.cornerRadius = 15.0
         content.layer.masksToBounds = true
         
         let alignment: NSTextAlignment = type == .outgoing ? .right : .left
@@ -105,7 +118,7 @@ public struct ChatObject: ChatObjectType {
     private func generateBubble(width: CGFloat, text: String) -> BubbleLabel {
         let bubble = BubbleLabel(message: text,
                                  width: width,
-                                 font: UIFont.systemFont(ofSize: 12.0))
+                                 font: UIFont.systemFont(ofSize: 15.0))
         bubble.textColor = UIColor.white
         return bubble
     }

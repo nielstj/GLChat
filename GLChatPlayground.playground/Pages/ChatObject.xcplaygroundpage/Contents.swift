@@ -34,110 +34,115 @@ let obj2 = ChatObject(id: "02",
 let obj3 = ChatObject(id: "03",
                       type: .incoming,
                       sender: gemma,
-                      message: msg3,
-                      images: [#imageLiteral(resourceName: "img.jpg")],
+                      message: "Hello, is it me you looking for",
+                      images: nil,
+                      timestamp: Date())
+let obj4 = ChatObject(id: "03",
+                      type: .outgoing,
+                      sender: gemma,
+                      message: "Maybe",
+                      images: nil,
+                      timestamp: Date())
+let obj5 = ChatObject(id: "03",
+                      type: .outgoing,
+                      sender: gemma,
+                      message: "Maybe not....",
+                      images: nil,
+                      timestamp: Date())
+let obj6 = ChatObject(id: "03",
+                      type: .incoming,
+                      sender: gemma,
+                      message: "babe please",
+                      images: nil,
                       timestamp: Date())
 
-let objects: [ChatObject] = [obj1, obj2, obj3]
+let objects: [ChatObject] = [obj1, obj2, obj3, obj4, obj5, obj6,
+                             obj1, obj2, obj3, obj4, obj5, obj6]
 
 
-let f = UIFont.systemFont(ofSize: 12)
-let c = UIColor.purple
-let w: CGFloat = 320
-
-
-let view = obj1.generateView(width: w)
-let avatar = obj1.generateAvatar()
-let cell = obj1.generateCell(width: w)
-
-PlaygroundPage.current.liveView = cell
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//let strings: [String] = ["You think?",
-//               "Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime",
-//               "Now that we know who you are, I know who I am. I'm not a mistake! It all makes sense! In a comic, you know how you can tell who the arch-villain's going to be? He's the exact opposite of the hero. And most times they're friends, like you and me! I should've known way back when... You know why, David? Because of the kids. They called me Mr Glass."]
-//
-//let testStr = "The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men."
-//
-
+//let f = UIFont.systemFont(ofSize: 12)
+//let c = UIColor.purple
+//let w: CGFloat = 320
 //
 //
+//let view = obj1.generateView(width: w)
+//let avatar = obj1.generateAvatar()
+//let cell = obj1.generateCell(width: w)
 //
-//class TVC: UITableViewController {
-//    
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        tableView.register(GLIncomingChatCell.self, forCellReuseIdentifier: "incoming")
-//    }
-//    
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(true)
-//        tableView.reloadData()
-//    }
-//    
-//    
-//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return objects.count
-//    }
-//    
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = GLIncomingChatCell(style: .default, reuseIdentifier: GLIncomingChatCell.reuseId)
-//        return cell
-//    }
-//    
-//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        let width = tableView.cellForRow(at: indexPath)?.contentView.bounds.width ?? self.view.bounds.width
-//        let height = testStr.height(withConstrainedWidth: width * 0.6, font: font)
-//        return height
-//        
-//    }
-//    
-//    
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        tableView.deselectRow(at: indexPath, animated: true)
-//    }
-//    
-//    
-//}
-//
-//
-//let tvc: TVC = TVC()
-//tvc.view.frame = CGRect(x: 0, y: 0, width: 300, height: 600)
-//
-//
-//PlaygroundPage.current.liveView = tvc.view
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+//PlaygroundPage.current.liveView = cell
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class TVC: UITableViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.tableView.separatorStyle = .none
+        self.tableView.allowsSelection = false
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        let indexPath = IndexPath(row: objects.count-1, section: 0)
+        tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return objects.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") ?? UITableViewCell(style: .default, reuseIdentifier: "cell")
+        cell.contentView.subviews.forEach({$0.removeFromSuperview()})
+        DispatchQueue.main.async {
+            let object = objects[indexPath.row]
+            let view = object.generateCell(width: cell.contentView.bounds.width)
+//            print("\(indexPath.row) - actual view height : \(view.bounds.height)")
+            cell.contentView.addSubview(view)
+        }
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        var height: CGFloat = 0.0
+        let obj = objects[indexPath.row]
+        return obj.getActualHeightWith(width: view.bounds.width)
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    
+}
+
+
+let tvc: TVC = TVC()
+tvc.view.frame = CGRect(x: 0, y: 0, width: 300, height: 600)
+
+
+PlaygroundPage.current.liveView = tvc.view
+
+
 ////: [Next](@next)
 

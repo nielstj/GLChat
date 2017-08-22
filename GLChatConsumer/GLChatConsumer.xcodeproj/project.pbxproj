@@ -1,0 +1,578 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DC5E47F81F4C221D0044B95F /* GLChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC5E47F71F4C221D0044B95F /* GLChat.framework */; };
+		DC5E47F91F4C221D0044B95F /* GLChat.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DC5E47F71F4C221D0044B95F /* GLChat.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DC8BE0D21F4C229100E7B029 /* ChatTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8BE0D11F4C229100E7B029 /* ChatTVC.swift */; };
+		DCC9E4511F4C190200445CE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC9E4501F4C190200445CE1 /* AppDelegate.swift */; };
+		DCC9E4531F4C190200445CE1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC9E4521F4C190200445CE1 /* ViewController.swift */; };
+		DCC9E4561F4C190200445CE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCC9E4541F4C190200445CE1 /* Main.storyboard */; };
+		DCC9E4581F4C190200445CE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCC9E4571F4C190200445CE1 /* Assets.xcassets */; };
+		DCC9E45B1F4C190200445CE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCC9E4591F4C190200445CE1 /* LaunchScreen.storyboard */; };
+		DCC9E4661F4C190200445CE1 /* GLChatConsumerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC9E4651F4C190200445CE1 /* GLChatConsumerTests.swift */; };
+		DCC9E4711F4C190200445CE1 /* GLChatConsumerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC9E4701F4C190200445CE1 /* GLChatConsumerUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DCC9E4621F4C190200445CE1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCC9E4451F4C190200445CE1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DCC9E44C1F4C190200445CE1;
+			remoteInfo = GLChatConsumer;
+		};
+		DCC9E46D1F4C190200445CE1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCC9E4451F4C190200445CE1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DCC9E44C1F4C190200445CE1;
+			remoteInfo = GLChatConsumer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DC5E47FA1F4C221D0044B95F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DC5E47F91F4C221D0044B95F /* GLChat.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		DC5E47F71F4C221D0044B95F /* GLChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GLChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC8BE0D11F4C229100E7B029 /* ChatTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTVC.swift; sourceTree = "<group>"; };
+		DCC9E44D1F4C190200445CE1 /* GLChatConsumer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GLChatConsumer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCC9E4501F4C190200445CE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DCC9E4521F4C190200445CE1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DCC9E4551F4C190200445CE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DCC9E4571F4C190200445CE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DCC9E45A1F4C190200445CE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DCC9E45C1F4C190200445CE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCC9E4611F4C190200445CE1 /* GLChatConsumerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GLChatConsumerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCC9E4651F4C190200445CE1 /* GLChatConsumerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLChatConsumerTests.swift; sourceTree = "<group>"; };
+		DCC9E4671F4C190200445CE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCC9E46C1F4C190200445CE1 /* GLChatConsumerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GLChatConsumerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCC9E4701F4C190200445CE1 /* GLChatConsumerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GLChatConsumerUITests.swift; sourceTree = "<group>"; };
+		DCC9E4721F4C190200445CE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DCC9E44A1F4C190200445CE1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC5E47F81F4C221D0044B95F /* GLChat.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCC9E45E1F4C190200445CE1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCC9E4691F4C190200445CE1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DCC9E4441F4C190200445CE1 = {
+			isa = PBXGroup;
+			children = (
+				DC5E47F71F4C221D0044B95F /* GLChat.framework */,
+				DCC9E44F1F4C190200445CE1 /* GLChatConsumer */,
+				DCC9E4641F4C190200445CE1 /* GLChatConsumerTests */,
+				DCC9E46F1F4C190200445CE1 /* GLChatConsumerUITests */,
+				DCC9E44E1F4C190200445CE1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DCC9E44E1F4C190200445CE1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DCC9E44D1F4C190200445CE1 /* GLChatConsumer.app */,
+				DCC9E4611F4C190200445CE1 /* GLChatConsumerTests.xctest */,
+				DCC9E46C1F4C190200445CE1 /* GLChatConsumerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DCC9E44F1F4C190200445CE1 /* GLChatConsumer */ = {
+			isa = PBXGroup;
+			children = (
+				DCC9E4501F4C190200445CE1 /* AppDelegate.swift */,
+				DCC9E4521F4C190200445CE1 /* ViewController.swift */,
+				DCC9E4541F4C190200445CE1 /* Main.storyboard */,
+				DCC9E4571F4C190200445CE1 /* Assets.xcassets */,
+				DCC9E4591F4C190200445CE1 /* LaunchScreen.storyboard */,
+				DCC9E45C1F4C190200445CE1 /* Info.plist */,
+				DC8BE0D11F4C229100E7B029 /* ChatTVC.swift */,
+			);
+			path = GLChatConsumer;
+			sourceTree = "<group>";
+		};
+		DCC9E4641F4C190200445CE1 /* GLChatConsumerTests */ = {
+			isa = PBXGroup;
+			children = (
+				DCC9E4651F4C190200445CE1 /* GLChatConsumerTests.swift */,
+				DCC9E4671F4C190200445CE1 /* Info.plist */,
+			);
+			path = GLChatConsumerTests;
+			sourceTree = "<group>";
+		};
+		DCC9E46F1F4C190200445CE1 /* GLChatConsumerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DCC9E4701F4C190200445CE1 /* GLChatConsumerUITests.swift */,
+				DCC9E4721F4C190200445CE1 /* Info.plist */,
+			);
+			path = GLChatConsumerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DCC9E44C1F4C190200445CE1 /* GLChatConsumer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCC9E4751F4C190200445CE1 /* Build configuration list for PBXNativeTarget "GLChatConsumer" */;
+			buildPhases = (
+				DCC9E4491F4C190200445CE1 /* Sources */,
+				DCC9E44A1F4C190200445CE1 /* Frameworks */,
+				DCC9E44B1F4C190200445CE1 /* Resources */,
+				DC5E47FA1F4C221D0044B95F /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GLChatConsumer;
+			productName = GLChatConsumer;
+			productReference = DCC9E44D1F4C190200445CE1 /* GLChatConsumer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DCC9E4601F4C190200445CE1 /* GLChatConsumerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCC9E4781F4C190200445CE1 /* Build configuration list for PBXNativeTarget "GLChatConsumerTests" */;
+			buildPhases = (
+				DCC9E45D1F4C190200445CE1 /* Sources */,
+				DCC9E45E1F4C190200445CE1 /* Frameworks */,
+				DCC9E45F1F4C190200445CE1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DCC9E4631F4C190200445CE1 /* PBXTargetDependency */,
+			);
+			name = GLChatConsumerTests;
+			productName = GLChatConsumerTests;
+			productReference = DCC9E4611F4C190200445CE1 /* GLChatConsumerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DCC9E46B1F4C190200445CE1 /* GLChatConsumerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCC9E47B1F4C190200445CE1 /* Build configuration list for PBXNativeTarget "GLChatConsumerUITests" */;
+			buildPhases = (
+				DCC9E4681F4C190200445CE1 /* Sources */,
+				DCC9E4691F4C190200445CE1 /* Frameworks */,
+				DCC9E46A1F4C190200445CE1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DCC9E46E1F4C190200445CE1 /* PBXTargetDependency */,
+			);
+			name = GLChatConsumerUITests;
+			productName = GLChatConsumerUITests;
+			productReference = DCC9E46C1F4C190200445CE1 /* GLChatConsumerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DCC9E4451F4C190200445CE1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = Holmusk;
+				TargetAttributes = {
+					DCC9E44C1F4C190200445CE1 = {
+						CreatedOnToolsVersion = 9.0;
+					};
+					DCC9E4601F4C190200445CE1 = {
+						CreatedOnToolsVersion = 9.0;
+						TestTargetID = DCC9E44C1F4C190200445CE1;
+					};
+					DCC9E46B1F4C190200445CE1 = {
+						CreatedOnToolsVersion = 9.0;
+						TestTargetID = DCC9E44C1F4C190200445CE1;
+					};
+				};
+			};
+			buildConfigurationList = DCC9E4481F4C190200445CE1 /* Build configuration list for PBXProject "GLChatConsumer" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DCC9E4441F4C190200445CE1;
+			productRefGroup = DCC9E44E1F4C190200445CE1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DCC9E44C1F4C190200445CE1 /* GLChatConsumer */,
+				DCC9E4601F4C190200445CE1 /* GLChatConsumerTests */,
+				DCC9E46B1F4C190200445CE1 /* GLChatConsumerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DCC9E44B1F4C190200445CE1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCC9E45B1F4C190200445CE1 /* LaunchScreen.storyboard in Resources */,
+				DCC9E4581F4C190200445CE1 /* Assets.xcassets in Resources */,
+				DCC9E4561F4C190200445CE1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCC9E45F1F4C190200445CE1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCC9E46A1F4C190200445CE1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DCC9E4491F4C190200445CE1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCC9E4531F4C190200445CE1 /* ViewController.swift in Sources */,
+				DC8BE0D21F4C229100E7B029 /* ChatTVC.swift in Sources */,
+				DCC9E4511F4C190200445CE1 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCC9E45D1F4C190200445CE1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCC9E4661F4C190200445CE1 /* GLChatConsumerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCC9E4681F4C190200445CE1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCC9E4711F4C190200445CE1 /* GLChatConsumerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DCC9E4631F4C190200445CE1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DCC9E44C1F4C190200445CE1 /* GLChatConsumer */;
+			targetProxy = DCC9E4621F4C190200445CE1 /* PBXContainerItemProxy */;
+		};
+		DCC9E46E1F4C190200445CE1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DCC9E44C1F4C190200445CE1 /* GLChatConsumer */;
+			targetProxy = DCC9E46D1F4C190200445CE1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DCC9E4541F4C190200445CE1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DCC9E4551F4C190200445CE1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DCC9E4591F4C190200445CE1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DCC9E45A1F4C190200445CE1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DCC9E4731F4C190200445CE1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DCC9E4741F4C190200445CE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DCC9E4761F4C190200445CE1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 785WJQ47KY;
+				INFOPLIST_FILE = GLChatConsumer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.holmusk.GLChatConsumer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DCC9E4771F4C190200445CE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 785WJQ47KY;
+				INFOPLIST_FILE = GLChatConsumer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.holmusk.GLChatConsumer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DCC9E4791F4C190200445CE1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 785WJQ47KY;
+				INFOPLIST_FILE = GLChatConsumerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.holmusk.GLChatConsumerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GLChatConsumer.app/GLChatConsumer";
+			};
+			name = Debug;
+		};
+		DCC9E47A1F4C190200445CE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 785WJQ47KY;
+				INFOPLIST_FILE = GLChatConsumerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.holmusk.GLChatConsumerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GLChatConsumer.app/GLChatConsumer";
+			};
+			name = Release;
+		};
+		DCC9E47C1F4C190200445CE1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 785WJQ47KY;
+				INFOPLIST_FILE = GLChatConsumerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.holmusk.GLChatConsumerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GLChatConsumer;
+			};
+			name = Debug;
+		};
+		DCC9E47D1F4C190200445CE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 785WJQ47KY;
+				INFOPLIST_FILE = GLChatConsumerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.holmusk.GLChatConsumerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GLChatConsumer;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DCC9E4481F4C190200445CE1 /* Build configuration list for PBXProject "GLChatConsumer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCC9E4731F4C190200445CE1 /* Debug */,
+				DCC9E4741F4C190200445CE1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DCC9E4751F4C190200445CE1 /* Build configuration list for PBXNativeTarget "GLChatConsumer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCC9E4761F4C190200445CE1 /* Debug */,
+				DCC9E4771F4C190200445CE1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DCC9E4781F4C190200445CE1 /* Build configuration list for PBXNativeTarget "GLChatConsumerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCC9E4791F4C190200445CE1 /* Debug */,
+				DCC9E47A1F4C190200445CE1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DCC9E47B1F4C190200445CE1 /* Build configuration list for PBXNativeTarget "GLChatConsumerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCC9E47C1F4C190200445CE1 /* Debug */,
+				DCC9E47D1F4C190200445CE1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DCC9E4451F4C190200445CE1 /* Project object */;
+}
