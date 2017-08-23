@@ -13,26 +13,27 @@ import GLChat
 class ChatTVC: UITableViewController {
     
     var objects: [ChatObject] = []
-    
+    var cellGen: ChatCellGenerator!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        cellGen = ChatCellGenerator(constrainedWidth: view.bounds.width, ratio: 0.6, padding: 8.0, timestampHeight: 20, font: UIFont.systemFont(ofSize: 15.0))
+        
         tableView.delegate = self
         tableView.dataSource = self
         
-        let msg1 = "Lorem............."
+        //let msg1 = "Lorem............."
         let msg2 = "Integer blandit metus sit amet velit varius congue. Cras sit amet laoreet velit, ut vulputate dolor. Donec odio dolor, ultricies vulputate sem eget, tristique gravida massa. Etiam purus ante, imperdiet nec molestie non, consectetur id eros. Integer pretium magna ac sem imperdiet, ut ornare velit euismod. Cras nulla ipsum, dignissim ut leo non, volutpat rhoncus dolor. Nullam ultrices lectus non magna malesuada imperdiet at dictum turpis."
         let msg3 = "Donec purus nisl, dictum at ultricies congue."
         
         let gemma = Avatar(name: "Gemma Arterton",
                            image: #imageLiteral(resourceName: "gemma.jpg"),
                            color: UIColor.blue)
-        let daniel = Avatar(name: "Daniel Tjuatja",
-                            image: nil,
-                            color: UIColor.blue)
-        
+        //let daniel = Avatar(name: "Daniel Tjuatja",
+        //                            image: nil,
+        //                            color: UIColor.blue)
         let obj1 = ChatObject(id: "01",
                               type: .outgoing,
                               sender: gemma,
@@ -70,8 +71,7 @@ class ChatTVC: UITableViewController {
                               images: nil,
                               timestamp: Date())
         
-        objects = [obj1, obj2, obj3, obj4, obj5, obj6,
-        obj1, obj2, obj3, obj4, obj5, obj6]
+        objects = [obj1, obj2, obj3, obj4, obj5, obj6, obj1, obj2, obj3, obj4, obj5, obj6, obj1, obj2, obj3, obj4, obj5, obj6, obj1, obj2, obj3, obj4, obj5, obj6, obj1, obj2, obj3, obj4, obj5, obj6, obj1, obj2, obj3, obj4, obj5, obj6]
         
         
         self.tableView.separatorStyle = .none
@@ -95,17 +95,15 @@ class ChatTVC: UITableViewController {
         cell.contentView.subviews.forEach({$0.removeFromSuperview()})
         DispatchQueue.main.async {
             let object = self.objects[indexPath.row]
-            let view = object.generateCell(width: cell.contentView.bounds.width)
-            //            print("\(indexPath.row) - actual view height : \(view.bounds.height)")
+            let view = self.cellGen.generateCell(obj: object)
             cell.contentView.addSubview(view)
         }
         return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        var height: CGFloat = 0.0
         let obj = objects[indexPath.row]
-        return obj.getActualHeightWith(width: view.bounds.width) + 8.0
+        return cellGen.heightFrom(obj: obj) + 16.0
     }
     
     

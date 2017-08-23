@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC054C1C1F4D277F00F45375 /* ChatCellGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC054C1B1F4D277F00F45375 /* ChatCellGenerator.swift */; };
 		DC23C0981F453BA600995044 /* GLChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC23C08E1F453BA500995044 /* GLChat.framework */; };
 		DC23C09F1F453BA600995044 /* GLChat.h in Headers */ = {isa = PBXBuildFile; fileRef = DC23C0911F453BA500995044 /* GLChat.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DC23C0B71F453CD800995044 /* StringExtensionsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC23C0B61F453CD800995044 /* StringExtensionsTest.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DC054C1B1F4D277F00F45375 /* ChatCellGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCellGenerator.swift; sourceTree = "<group>"; };
 		DC23C08E1F453BA500995044 /* GLChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GLChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC23C0911F453BA500995044 /* GLChat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLChat.h; sourceTree = "<group>"; };
 		DC23C0921F453BA500995044 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 			children = (
 				DC23C0B01F453C7D00995044 /* ChatAvatar.swift */,
 				DC23C0B11F453C7D00995044 /* ChatObject.swift */,
+				DC054C1B1F4D277F00F45375 /* ChatCellGenerator.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				DC23C0BB1F453DF900995044 /* Layout.swift in Sources */,
 				DC2F61A71F467E03008731D8 /* CGRectExtensions.swift in Sources */,
 				DCCB8BF51F4BBEAE00CB7A1B /* DatesExtensions.swift in Sources */,
+				DC054C1C1F4D277F00F45375 /* ChatCellGenerator.swift in Sources */,
 				DC23C0B81F453DEE00995044 /* StringsExtensions.swift in Sources */,
 				DC4F1A5F1F498BFD00BD29A5 /* ChatMediaLayout.swift in Sources */,
 				DC23C0CF1F45851B00995044 /* GLChatCell.swift in Sources */,
@@ -484,6 +488,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = GLChat/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.holmusk.GLChat;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -506,6 +511,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = GLChat/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.holmusk.GLChat;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
