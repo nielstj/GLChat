@@ -20,8 +20,13 @@ public struct ChatMediaLayout: Layout {
     
     mutating public func layout(in rect: CGRect) {
         let image = media.image!
-        media.frame = CGRect(x:0, y:0, width: rect.width, height: image.size.height )
-        message.frame = CGRect(x: 0, y: image.size.height, width: rect.width, height: message.bounds.height)
+        media.frame = CGRect(x:0, y:0,
+                             width: rect.width,
+                             height: image.size.height )
+        message.frame = CGRect(x: 0,
+                               y: image.size.height,
+                               width: rect.width,
+                               height: message.bounds.height)
     }
     public var contents: [Content] {
         return [message, media]

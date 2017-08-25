@@ -12,23 +12,26 @@ public protocol ChatCellGeneratorType {
     var width: CGFloat { get set }
     func heightFrom(obj: ChatObjectType) -> CGFloat
     func generateCell(obj: ChatObjectType) -> UIView
-    
 }
 
-public final class ChatCellGenerator: ChatCellGeneratorType {
+public struct ChatCellGenerator: ChatCellGeneratorType {
     
     public var width: CGFloat
     public var ratio: CGFloat
     public var padding: CGFloat
-    public var tsHeight: CGFloat
     public var font: UIFont
+    public var style: ChatStyleType
     
-    public init(constrainedWidth: CGFloat, ratio: CGFloat, padding: CGFloat, timestampHeight: CGFloat, font: UIFont) {
+    public init(constrainedWidth: CGFloat,
+                ratio: CGFloat,
+                padding: CGFloat,
+                font: UIFont,
+                style: ChatStyleType? = nil) {
         self.width = constrainedWidth
         self.ratio = ratio
         self.padding = padding
-        self.tsHeight = timestampHeight
         self.font = font
+        self.style = style ?? DefaultChatStyle()
     }
     
     ///
@@ -37,14 +40,16 @@ public final class ChatCellGenerator: ChatCellGeneratorType {
     public func heightFrom(obj: ChatObjectType) -> CGFloat {
         let m = obj.message
         let w = width * ratio
-        
+        let tsHeight = font.pointSize + 8.0
+        let textHeight =  obj.message == "" ? 0.0 : m.height(withConstrainedWidth: (w - 2 * padding),
+                                                             font: font)
         var height: CGFloat = 0.0
         height += 2 * padding
         height += tsHeight
-        height += m.height(withConstrainedWidth: (w - 2 * padding), font: UIFont.systemFont(ofSize: 15.0))
+        height += textHeight
         if let image = obj.images?.first {
             let ratio = w / image.size.width
-            height += ceil(ratio * image.size.height)
+            height += ceil(ratio * image.size.height) - padding/2
         }
         return height
     }
@@ -85,43 +90,49 @@ public final class ChatCellGenerator: ChatCellGeneratorType {
     private func generateContentView(obj: ChatObjectType, width: CGFloat) -> UIView {
         let view = UIView()
         let content: UIView!
+        let color = obj.type == .incoming ? style.incomingColor : style.outgoingColor
+        let textColor = obj.type == .incoming ? style.incomingTextColor : style.outgoingTextColor
         
         if let image = obj.images?.first {
-            content = generateImageBubble(image: image, caption: obj.message, width: width)
+            content = generateImageBubble(image: image,
+                                          caption: obj.message,
+                                          width: width,
+                                          textColor: textColor)
         }
         else {
-            content = generateTextBubble(text: obj.message, width: width)
+            content = generateTextBubble(text: obj.message, width: width, color: textColor)
         }
-        
-        // TODO: DO Styling ere
-        let color = obj.type == .incoming ? UIColor.blue : UIColor.red
         content.backgroundColor = color
-        content.layer.cornerRadius = 15.0
+        content.layer.cornerRadius = style.cornerRadius
         content.layer.masksToBounds = true
-        // ENDOFTODO
         
         let alignment: NSTextAlignment = obj.type == .outgoing ? .right : .left
-        var tsLayout = content.withDate(obj.timestamp, alignment: alignment)
-        let rect = CGRect(x: 0, y: 0, width: width, height: content.bounds.height + 20)
+        var tsLayout = content.withDate(obj.timestamp, alignment: alignment, font: font)
+        let fontPadding = font.pointSize + 8.0
+        let rect = CGRect(x: 0, y: 0, width: width, height: content.bounds.height + fontPadding)
         view.frame = rect
         tsLayout.layout(in: view.bounds)
         for v in tsLayout.contents { view.addSubview(v) }
         return view
     }
     
-    private func generateTextBubble(text: String, width: CGFloat) -> BubbleLabel {
+    private func generateTextBubble(text: String, width: CGFloat, color: UIColor) -> BubbleLabel {
         let bubble = BubbleLabel(message: text, width: width, font: font, padding: padding)
-        //TODO: APPLY STYLING
-        bubble.textColor = UIColor.white
+        bubble.textColor = color
         return bubble
     }
     
-    private func generateImageBubble(image: UIImage, caption: String, width: CGFloat) -> UIView {
+    private func generateImageBubble(image: UIImage, caption: String, width: CGFloat, textColor: UIColor)
+        -> UIView
+    {
         let view = UIView()
-        let bubble = generateTextBubble(text: caption, width: width)
+        let bubble = generateTextBubble(text: caption,
+                                        width: width,
+                                        color: textColor)
         let image = image.scaled(to: width)
         let iv = UIImageView(image: image)
-        let th = bubble.bounds.height + image.size.height
+        let bubbleHeight = caption == "" ? 0.0 : bubble.bounds.height
+        let th = bubbleHeight + image.size.height - (padding/2)
         view.frame = CGRect(x: 0, y: 0, width: width, height: th)
         var layout = ChatMediaLayout(message: bubble, media: iv)
         for v in layout.contents { view.addSubview(v)}

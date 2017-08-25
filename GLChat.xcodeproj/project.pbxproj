@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DC054C1C1F4D277F00F45375 /* ChatCellGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC054C1B1F4D277F00F45375 /* ChatCellGenerator.swift */; };
+		DC1D67201F4FC9AA00A57A9D /* ChatCellStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1D671F1F4FC9AA00A57A9D /* ChatCellStyle.swift */; };
 		DC23C0981F453BA600995044 /* GLChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC23C08E1F453BA500995044 /* GLChat.framework */; };
 		DC23C09F1F453BA600995044 /* GLChat.h in Headers */ = {isa = PBXBuildFile; fileRef = DC23C0911F453BA500995044 /* GLChat.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DC23C0B71F453CD800995044 /* StringExtensionsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC23C0B61F453CD800995044 /* StringExtensionsTest.swift */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		DC054C1B1F4D277F00F45375 /* ChatCellGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCellGenerator.swift; sourceTree = "<group>"; };
+		DC1D671F1F4FC9AA00A57A9D /* ChatCellStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCellStyle.swift; sourceTree = "<group>"; };
 		DC23C08E1F453BA500995044 /* GLChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GLChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC23C0911F453BA500995044 /* GLChat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLChat.h; sourceTree = "<group>"; };
 		DC23C0921F453BA500995044 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				DC23C0B01F453C7D00995044 /* ChatAvatar.swift */,
 				DC23C0B11F453C7D00995044 /* ChatObject.swift */,
 				DC054C1B1F4D277F00F45375 /* ChatCellGenerator.swift */,
+				DC1D671F1F4FC9AA00A57A9D /* ChatCellStyle.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				DC2F61AC1F467F0A008731D8 /* AvatarView.swift in Sources */,
 				DC23C0BC1F453DF900995044 /* BackgroundLayout.swift in Sources */,
 				DC78E6891F46C70E0011797A /* BubbleLabel.swift in Sources */,
+				DC1D67201F4FC9AA00A57A9D /* ChatCellStyle.swift in Sources */,
 				DC23C0BB1F453DF900995044 /* Layout.swift in Sources */,
 				DC2F61A71F467E03008731D8 /* CGRectExtensions.swift in Sources */,
 				DCCB8BF51F4BBEAE00CB7A1B /* DatesExtensions.swift in Sources */,
